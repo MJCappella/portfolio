@@ -44,20 +44,3 @@ portfolio/
 ```
 
 ---
-
-## ⚡ Development & Build Commands
-
-### 1. Rebuild index.html from modular sections:
-Whenever you modify any file in `sections/`, run:
-```bash
-npm run build
-# OR directly:
-node build.js
-```
-
-### 2. Preview locally:
-```bash
-npm start
-# Opens a lightweight local HTTP server at http://localhost:8080
-```
-Or simply open `index.html` in your browser.
