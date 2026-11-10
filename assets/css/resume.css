@@ -1,0 +1,321 @@
+/* =========================================================
+ * Redesigned Resume, Experience, Education & Skills Styles
+ * Michael James - Full Stack Software Engineer
+ * ========================================================= */
+
+.resume-tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.resume-tab-btn {
+  padding: 10px 24px;
+  border-radius: 30px;
+  border: 1px solid rgba(248, 92, 112, 0.35);
+  background: #fff;
+  color: #343a40;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.resume-tab-btn:hover,
+.resume-tab-btn.active {
+  background: #F85C70;
+  color: #fff;
+  border-color: #F85C70;
+  box-shadow: 0 6px 16px rgba(248, 92, 112, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Timeline Layout for Experience & Education */
+.experience-timeline {
+  position: relative;
+  padding-left: 28px;
+}
+
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  bottom: 20px;
+  width: 2px;
+  background: linear-gradient(180deg, #F85C70 0%, rgba(248, 92, 112, 0.15) 100%);
+}
+
+.timeline-card {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px 26px;
+  margin-bottom: 26px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(248, 92, 112, 0.12);
+  border-color: rgba(248, 92, 112, 0.35);
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -28px;
+  top: 24px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #F85C70;
+  box-shadow: 0 0 0 4px rgba(248, 92, 112, 0.18);
+  transition: all 0.3s ease;
+}
+
+.timeline-card:hover .timeline-dot {
+  background: #F85C70;
+  transform: scale(1.2);
+}
+
+.timeline-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.timeline-role {
+  font-size: 19px;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 4px;
+}
+
+.timeline-company {
+  font-size: 15px;
+  font-weight: 600;
+  color: #F85C70;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.timeline-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.timeline-date-badge {
+  font-size: 12px;
+  font-weight: 600;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  color: #495057;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.timeline-badge-active {
+  background: rgba(163, 193, 74, 0.15);
+  color: #6a8b1a;
+  border-color: rgba(163, 193, 74, 0.3);
+}
+
+.timeline-type-badge {
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(248, 92, 112, 0.1);
+  color: #F85C70;
+  padding: 3px 9px;
+  border-radius: 12px;
+}
+
+.timeline-body p {
+  font-size: 14px;
+  color: #495057;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.timeline-body ul {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.timeline-body ul li {
+  font-size: 13.5px;
+  color: #555;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.timeline-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.timeline-tech-pill {
+  font-size: 11.5px;
+  font-weight: 600;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  color: #343a40;
+  padding: 3px 10px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.timeline-card:hover .timeline-tech-pill {
+  border-color: rgba(248, 92, 112, 0.25);
+}
+
+/* Skills Cluster Modern Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 22px;
+}
+
+.skill-cluster-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-cluster-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 26px rgba(248, 92, 112, 0.12);
+  border-color: rgba(248, 92, 112, 0.3);
+}
+
+.skill-cluster-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f1f3f5;
+}
+
+.skill-cluster-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(248, 92, 112, 0.1);
+  color: #F85C70;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.skill-cluster-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #212529;
+  margin: 0;
+}
+
+.skill-cluster-desc {
+  font-size: 12px;
+  color: #6c757d;
+  margin: 0;
+}
+
+.skill-chips-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-chip {
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 6px 12px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  color: #2b3035;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.skill-chip:hover {
+  background: #fff;
+  border-color: #F85C70;
+  color: #F85C70;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(248, 92, 112, 0.15);
+}
+
+.skill-chip.skill-primary {
+  background: rgba(248, 92, 112, 0.08);
+  border-color: rgba(248, 92, 112, 0.25);
+  color: #F85C70;
+}
+
+.skill-chip .skill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #F85C70;
+}
+
+/* Language proficiency bars inside language cluster */
+.lang-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.lang-name {
+  font-weight: 600;
+  font-size: 13.5px;
+  color: #343a40;
+}
+
+.lang-level {
+  font-size: 12px;
+  font-weight: 600;
+  color: #F85C70;
+  background: rgba(248, 92, 112, 0.08);
+  padding: 2px 10px;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .timeline-card {
+    padding: 18px 18px;
+  }
+
+  .timeline-card-header {
+    flex-direction: column;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,223 @@
+<!-- Portfolio Section (Horizontal Flowing Carousel) -->
+<section class="section bg-custom-gray project-carousel-section" id="portfolio">
+    <div class="container">
+        <div class="project-carousel-header">
+            <div>
+                <h1 class="mb-1"><span class="text-danger">Featured</span> Projects</h1>
+                <p class="text-muted mb-0">Production systems, AI agents, and fintech engineering — flow horizontally or
+                    drag to explore</p>
+            </div>
+            <div class="project-carousel-controls">
+                <button id="carousel-prev" class="carousel-nav-btn" aria-label="Previous Projects" title="Previous"><i
+                        class="ti-arrow-left"></i></button>
+                <button id="carousel-next" class="carousel-nav-btn" aria-label="Next Projects" title="Next"><i
+                        class="ti-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div class="portfolio mb-3">
+            <div class="filters portfolio-filters">
+                <a href="#" data-filter="*" class="active">All</a>
+                <a href="#" data-filter=".ai">AI &amp; GenAI</a>
+                <a href="#" data-filter=".fintech">Fintech &amp; APIs</a>
+                <a href="#" data-filter=".enterprise">Enterprise Systems</a>
+            </div>
+        </div>
+
+        <div class="project-carousel-wrapper">
+            <div class="project-carousel-track" id="project-carousel-track">
+
+                <!-- Project 1: MultiAgent Workout App -->
+                <div class="project-card ai">
+                    <div class="project-card-media">
+                        <span class="project-category-badge">GenAI &amp; Agents</span>
+                        <img src="assets/imgs/web-1.jpg" alt="MultiAgent Workout and Nutrition AI App">
+                    </div>
+                    <div class="project-card-body">
+                        <h5 class="project-card-title">
+                            <a href="https://github.com/MJCappella/MultiAgent-Workout-App" target="_blank">MultiAgent
+                                Workout AI</a>
+                        </h5>
+                        <p class="project-card-desc">
+                            GenAI-powered multi-agent nutrition and fitness platform orchestrating specialized LLMs for
+                            custom routines, dynamic notes, and real-time conversational guidance.
+                        </p>
+                        <div class="project-card-tags">
+                            <span class="project-tech-pill">Python</span>
+                            <span class="project-tech-pill">Langflow</span>
+                            <span class="project-tech-pill">Streamlit</span>
+                            <span class="project-tech-pill">Astra DB</span>
+                            <span class="project-tech-pill">OpenAI</span>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="https://github.com/MJCappella/MultiAgent-Workout-App" target="_blank"
+                                class="btn btn-sm btn-outline-danger btn-rounded">
+                                <i class="ti-github mr-1"></i> View Code
+                            </a>
+                            <span class="small text-muted font-weight-bold">AI / Multi-Agent</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: FinanceGPT -->
+                <div class="project-card ai fintech">
+                    <div class="project-card-media">
+                        <span class="project-category-badge">AI Financial Analyst</span>
+                        <img src="assets/imgs/financegpt.png" alt="FinanceGPT Autonomous Market Analyst">
+                    </div>
+                    <div class="project-card-body">
+                        <h5 class="project-card-title">
+                            <a href="https://github.com/MJCappella/FinanceGPT" target="_blank">FinanceGPT</a>
+                        </h5>
+                        <p class="project-card-desc">
+                            Autonomous financial intelligence agent leveraging OpenAI function calling and AlphaVantage
+                            APIs for real-time forex, cryptocurrency, equities, and market news analysis.
+                        </p>
+                        <div class="project-card-tags">
+                            <span class="project-tech-pill">Python</span>
+                            <span class="project-tech-pill">GPT-3.5</span>
+                            <span class="project-tech-pill">AlphaVantage API</span>
+                            <span class="project-tech-pill">Chainlit</span>
+                            <span class="project-tech-pill">Fintech</span>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="https://github.com/MJCappella/FinanceGPT" target="_blank"
+                                class="btn btn-sm btn-outline-danger btn-rounded">
+                                <i class="ti-github mr-1"></i> View Code
+                            </a>
+                            <span class="small text-muted font-weight-bold">LLM &amp; Finance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Mpesa-api-py -->
+                <div class="project-card fintech">
+                    <div class="project-card-media">
+                        <span class="project-category-badge">Fintech SDK / API</span>
+                        <img src="assets/imgs/web-2.jpg" alt="Mpesa API Python Wrapper">
+                    </div>
+                    <div class="project-card-body">
+                        <h5 class="project-card-title">
+                            <a href="https://github.com/MJCappella/Mpesa-api-py" target="_blank">Mpesa-api-py</a>
+                        </h5>
+                        <p class="project-card-desc">
+                            High-performance Python client SDK for Safaricom's M-PESA Daraja API supporting STK Push,
+                            C2B, B2C disbursements, balance inquiries, and automated OAuth token caching.
+                        </p>
+                        <div class="project-card-tags">
+                            <span class="project-tech-pill">Python</span>
+                            <span class="project-tech-pill">M-PESA Daraja</span>
+                            <span class="project-tech-pill">OAuth2</span>
+                            <span class="project-tech-pill">REST APIs</span>
+                            <span class="project-tech-pill">Payment Gateways</span>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="https://github.com/MJCappella/Mpesa-api-py" target="_blank"
+                                class="btn btn-sm btn-outline-danger btn-rounded">
+                                <i class="ti-github mr-1"></i> View Code
+                            </a>
+                            <span class="small text-muted font-weight-bold">Open Source SDK</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: KK Wholesalers Monolithic ERP -->
+                <div class="project-card enterprise">
+                    <div class="project-card-media">
+                        <span class="project-category-badge">Enterprise ERP</span>
+                        <img src="assets/imgs/web-3.jpg" alt="KK Wholesalers ERP & Inventory Management">
+                    </div>
+                    <div class="project-card-body">
+                        <h5 class="project-card-title">
+                            <a href="https://github.com/MJCappella/KK-ERP-Inventory-Management" target="_blank">KK-ERP
+                                Inventory Management</a>
+                        </h5>
+                        <p class="project-card-desc">
+                            Monolithic multi-branch Wholesale &amp; Retail ERP powered by Laravel 13, featuring a
+                            concurrency-safe double-entry stock audit ledger, RBAC, Docker, and Grafana + Loki
+                            telemetry.
+                        </p>
+                        <div class="project-card-tags">
+                            <span class="project-tech-pill">Laravel 13</span>
+                            <span class="project-tech-pill">Blade</span>
+                            <span class="project-tech-pill">MySQL</span>
+                            <span class="project-tech-pill">Docker</span>
+                            <span class="project-tech-pill">Grafana &amp; Loki</span>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="https://github.com/MJCappella/KK-ERP-Inventory-Management" target="_blank"
+                                class="btn btn-sm btn-outline-danger btn-rounded">
+                                <i class="ti-github mr-1"></i> View Code
+                            </a>
+                            <span class="small text-muted font-weight-bold">ERP &amp; Observability</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Huduma ACD Cloud Contact Center -->
+                <div class="project-card enterprise">
+                    <div class="project-card-media">
+                        <span class="project-category-badge">Cloud CCaaS</span>
+                        <img src="assets/imgs/web-4.jpg" alt="Huduma ACD Cloud Contact Center">
+                    </div>
+                    <div class="project-card-body">
+                        <h5 class="project-card-title">
+                            <a href="https://github.com/MJCappella" target="_blank">Huduma ACD (CCaaS)</a>
+                        </h5>
+                        <p class="project-card-desc">
+                            Cloud-native omnichannel contact center platform built on Next.js 15 &amp; Laravel 11 with
+                            in-browser WebRTC softphone, real-time automated call distribution (ACD), and SMS threading.
+                        </p>
+                        <div class="project-card-tags">
+                            <span class="project-tech-pill">Laravel 11</span>
+                            <span class="project-tech-pill">Next.js 15</span>
+                            <span class="project-tech-pill">WebRTC</span>
+                            <span class="project-tech-pill">Africa's Talking</span>
+                            <span class="project-tech-pill">WebSockets</span>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="https://github.com/MJCappella" target="_blank"
+                                class="btn btn-sm btn-outline-danger btn-rounded">
+                                <i class="ti-github mr-1"></i> View Code
+                            </a>
+                            <span class="small text-muted font-weight-bold">WebRTC &amp; Telephony</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: QuickSave Water Conservation Utility -->
+                <div class="project-card enterprise">
+                    <div class="project-card-media">
+                        <span class="project-category-badge">Smart Utilities</span>
+                        <img src="assets/imgs/header.jpg" alt="QuickSave Water Conservation Utility">
+                    </div>
+                    <div class="project-card-body">
+                        <h5 class="project-card-title">
+                            <a href="https://github.com/MJCappella/quicksave-water" target="_blank">QuickSave Smart
+                                Water Utility</a>
+                        </h5>
+                        <p class="project-card-desc">
+                            Automated water utility metering and conservation platform processing live sensor telemetry,
+                            anomaly leak detection, customer consumption metrics, and automated billing workflows.
+                        </p>
+                        <div class="project-card-tags">
+                            <span class="project-tech-pill">Laravel</span>
+                            <span class="project-tech-pill">IoT Telemetry</span>
+                            <span class="project-tech-pill">MySQL</span>
+                            <span class="project-tech-pill">REST APIs</span>
+                            <span class="project-tech-pill">Docker</span>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="https://github.com/MJCappella/quicksave-water" target="_blank"
+                                class="btn btn-sm btn-outline-danger btn-rounded">
+                                <i class="ti-github mr-1"></i> View Code
+                            </a>
+                            <span class="small text-muted font-weight-bold">Smart IoT Utility</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

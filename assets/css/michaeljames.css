@@ -11678,3 +11678,210 @@ pre .code {
   display: block;
   margin-top: 10px;
 }
+
+/* =========================================================
+ * Horizontal Flowing Project Carousel
+ * ========================================================= */
+.project-carousel-section {
+  position: relative;
+}
+
+.project-carousel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+  gap: 15px;
+}
+
+.project-carousel-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(248, 92, 112, 0.4);
+  background: #fff;
+  color: #F85C70;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.carousel-nav-btn:hover {
+  background: #F85C70;
+  color: #fff;
+  transform: scale(1.08);
+  box-shadow: 0 6px 14px rgba(248, 92, 112, 0.3);
+}
+
+.carousel-nav-btn:focus {
+  outline: none;
+}
+
+.project-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 10px 0 25px;
+}
+
+.project-carousel-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px 4px 20px 4px;
+  scrollbar-width: thin;
+  scrollbar-color: #F85C70 #e9ecef;
+}
+
+.project-carousel-track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.project-carousel-track::-webkit-scrollbar-track {
+  background: #e9ecef;
+  border-radius: 10px;
+}
+
+.project-carousel-track::-webkit-scrollbar-thumb {
+  background: #F85C70;
+  border-radius: 10px;
+}
+
+.project-card {
+  flex: 0 0 350px;
+  max-width: 350px;
+  scroll-snap-align: start;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 576px) {
+  .project-card {
+    flex: 0 0 290px;
+    max-width: 290px;
+  }
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(248, 92, 112, 0.18);
+  border-color: rgba(248, 92, 112, 0.35);
+}
+
+.project-card.dimmed {
+  opacity: 0.25;
+  filter: grayscale(80%);
+}
+
+.project-card-media {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  background: #212529;
+}
+
+.project-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-card-media img {
+  transform: scale(1.06);
+}
+
+.project-category-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(248, 92, 112, 0.92);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
+
+.project-card-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.project-card-title a {
+  color: #212529;
+  transition: color 0.2s ease;
+}
+
+.project-card-title a:hover {
+  color: #F85C70;
+  text-decoration: none;
+}
+
+.project-card-desc {
+  font-size: 13.5px;
+  color: #6c757d;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.project-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.project-tech-pill {
+  font-size: 11px;
+  padding: 3px 9px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  color: #495057;
+  font-weight: 600;
+}
+
+.project-card-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #f1f3f5;
+  padding-top: 14px;
+}
+

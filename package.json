@@ -1,0 +1,13 @@
+{
+  "name": "michaeljames-portfolio",
+  "version": "2.0.0",
+  "description": "Personal Portfolio of Michael James - Full Stack Software Engineer",
+  "main": "index.html",
+  "scripts": {
+    "build": "node build.js",
+    "start": "node -e \"const http=require('http'),fs=require('fs'),path=require('path');http.createServer((req,res)=>{let f=path.join(__dirname,req.url==='/'?'index.html':req.url);fs.readFile(f,(err,d)=>{if(err){res.writeHead(404);res.end('Not found');}else{res.writeHead(200);res.end(d);}});}).listen(8080,()=>console.log('Server running at http://localhost:8080'));\""
+  },
+  "author": "Michael James",
+  "license": "MIT"
+}
+

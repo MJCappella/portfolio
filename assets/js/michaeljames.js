@@ -10,7 +10,7 @@
 
 // smooth scroll
 $(document).ready(function(){
-    $(".navbar .nav-link").on('click', function(event) {
+    $(".navbar .nav-link, .footer-nav-link, .back-to-top-btn, .hero-actions a[href^='#']").on('click', function(event) {
 
         if (this.hash !== "") {
 
@@ -25,39 +25,144 @@ $(document).ready(function(){
             });
         } 
     });
+
+    // Resume tab navigation
+    $(".resume-tab-btn").on("click", function(e) {
+        e.preventDefault();
+        $(".resume-tab-btn").removeClass("active");
+        $(this).addClass("active");
+        var targetPane = $(this).attr("data-target");
+        $(".resume-tab-pane").hide();
+        $(targetPane).fadeIn(280);
+    });
 });
 
-// portfolio filters
-$(window).on("load", function() {
-    var t = $(".portfolio-container");
-    t.isotope({
-        filter: ".new",
-        animationOptions: {
-            duration: 750,
-            easing: "linear",
-            queue: !1
+// Horizontal flowing project carousel & filters
+$(document).ready(function() {
+    var $track = $("#project-carousel-track");
+    if (!$track.length) return;
+
+    var scrollStep = 374; // Card width (350px) + gap (24px)
+    var autoFlowTimer = null;
+    var isHovered = false;
+
+    // Next / Prev button navigation
+    $("#carousel-next").on("click", function() {
+        var maxScroll = $track[0].scrollWidth - $track[0].clientWidth;
+        if ($track.scrollLeft() >= maxScroll - 10) {
+            $track.animate({ scrollLeft: 0 }, 500);
+        } else {
+            $track.animate({ scrollLeft: $track.scrollLeft() + scrollStep }, 350);
         }
-    }), $(".filters a").click(function() {
-        $(".filters .active").removeClass("active"), $(this).addClass("active");
-        var i = $(this).attr("data-filter");
-        return t.isotope({
-            filter: i,
-            animationOptions: {
-                duration: 750,
-                easing: "linear",
-                queue: !1
+    });
+
+    $("#carousel-prev").on("click", function() {
+        if ($track.scrollLeft() <= 10) {
+            var maxScroll = $track[0].scrollWidth - $track[0].clientWidth;
+            $track.animate({ scrollLeft: maxScroll }, 500);
+        } else {
+            $track.animate({ scrollLeft: $track.scrollLeft() - scrollStep }, 350);
+        }
+    });
+
+    // Auto-flow timer
+    function startAutoFlow() {
+        if (autoFlowTimer) clearInterval(autoFlowTimer);
+        autoFlowTimer = setInterval(function() {
+            if (!isHovered && $track.is(":visible")) {
+                var maxScroll = $track[0].scrollWidth - $track[0].clientWidth;
+                if ($track.scrollLeft() >= maxScroll - 15) {
+                    $track.animate({ scrollLeft: 0 }, 600);
+                } else {
+                    $track.animate({ scrollLeft: $track.scrollLeft() + scrollStep }, 450);
+                }
             }
-        }), !1
+        }, 4200);
+    }
+
+    function stopAutoFlow() {
+        if (autoFlowTimer) clearInterval(autoFlowTimer);
+    }
+
+    // Pause on hover / touch
+    $track.on("mouseenter touchstart", function() {
+        isHovered = true;
+    }).on("mouseleave touchend", function() {
+        isHovered = false;
+    });
+
+    $(".carousel-nav-btn").on("mouseenter", function() {
+        isHovered = true;
+    }).on("mouseleave", function() {
+        isHovered = false;
+    });
+
+    startAutoFlow();
+
+    // Category filter logic
+    $(".portfolio-filters a").on("click", function(e) {
+        e.preventDefault();
+        $(".portfolio-filters a").removeClass("active");
+        $(this).addClass("active");
+
+        var filter = $(this).attr("data-filter");
+        var $cards = $track.find(".project-card");
+
+        if (filter === "*" || filter === ".new") {
+            $cards.removeClass("dimmed").fadeIn(300);
+            $track.animate({ scrollLeft: 0 }, 300);
+        } else {
+            var selector = filter.replace(".", "");
+            $cards.each(function() {
+                if ($(this).hasClass(selector)) {
+                    $(this).removeClass("dimmed").fadeIn(300);
+                } else {
+                    $(this).addClass("dimmed");
+                }
+            });
+            // Scroll to the first matching visible card
+            var $firstMatch = $track.find(".project-card." + selector).first();
+            if ($firstMatch.length) {
+                var cardLeft = $firstMatch.position().left + $track.scrollLeft() - $track.offset().left;
+                $track.animate({ scrollLeft: cardLeft }, 400);
+            }
+        }
+    });
+
+    // Drag-to-scroll support for desktop
+    var isDown = false;
+    var startX, scrollLeftVal;
+
+    $track.on("mousedown", function(e) {
+        isDown = true;
+        $track.css("cursor", "grabbing");
+        startX = e.pageX - $track.offset().left;
+        scrollLeftVal = $track.scrollLeft();
+    });
+
+    $(document).on("mouseup", function() {
+        if (isDown) {
+            isDown = false;
+            $track.css("cursor", "grab");
+        }
+    });
+
+    $track.on("mousemove", function(e) {
+        if (!isDown) return;
+        e.preventDefault();
+        var x = e.pageX - $track.offset().left;
+        var walk = (x - startX) * 1.5;
+        $track.scrollLeft(scrollLeftVal - walk);
     });
 });
 
 
 // google maps
 function initMap() {
-// Styles a map in night mode.
+// Styles a map in night mode with a neutral global view.
     var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 40.674, lng: -73.945},
-        zoom: 12,
+        center: {lat: 20.0, lng: 15.0},
+        zoom: 3,
         scrollwheel:  false,
         navigationControl: false,
         mapTypeControl: false,
