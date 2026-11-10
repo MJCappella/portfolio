@@ -34,6 +34,14 @@
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="text" name="subject" />
+        <textarea name="message"></textarea>
+    </form>
+
     <div data-include="sections/header.html"></div>
     <div data-include="sections/navbar.html"></div>
     <div data-include="sections/about.html"></div>

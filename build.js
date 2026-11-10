@@ -148,3 +148,11 @@ s0.parentNode.insertBefore(s1, s0);
 fs.writeFileSync(OUTPUT_FILE, template, 'utf8');
 console.log(`Successfully compiled portfolio into ${OUTPUT_FILE} (${fs.statSync(OUTPUT_FILE).size} bytes)`);
 
+// Copy assets to dist/assets for standalone deployment
+const assetsSrc = path.join(__dirname, 'assets');
+const assetsDest = path.join(DIST_DIR, 'assets');
+if (fs.existsSync(assetsSrc)) {
+    fs.cpSync(assetsSrc, assetsDest, { recursive: true });
+    console.log(`Copied assets to ${assetsDest}`);
+}
+

@@ -1,0 +1,22 @@
+# Netlify Production Configuration
+# Michael James - Full Stack Software Engineer
+
+[build]
+  command = "node build.js"
+  publish = "dist"
+
+# Security & Performance Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache static assets for fast global CDN delivery
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
